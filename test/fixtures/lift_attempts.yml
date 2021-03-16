@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lift: one
+  target_reps: 1
+  target_weight: 1
+  target_time: 1
+  reps: 1
+  weight: 1
+  time: 1
+
+two:
+  lift: two
+  target_reps: 1
+  target_weight: 1
+  target_time: 1
+  reps: 1
+  weight: 1
+  time: 1

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  workout: one
+  position: 1
+  rest_time: 1
+
+two:
+  name: MyString
+  workout: two
+  position: 1
+  rest_time: 1
