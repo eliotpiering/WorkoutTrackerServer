@@ -1,14 +1,14 @@
-Exercise Name,LeftRight?,Reps,Weight,Time,Reps,Weight,Time,Reps,Weight,Time
-SUPERSET_START ,Warmup,30,,,,,,,,
-Single Leg Heels Dug in Bridge,TRUE,8,,,8,,,8,,
-Lateral Band Walks,TRUE,12,,,12,,,12,,
-Globlet Squat Jump,FALSE,10,20,,10,20,,10,20,
-SUPERSET_START,Main,90,,,,,,,,
-DB Alternating Reverse lunge w/ rotation over knee,TRUE,8,40,,8,40,,8,40,
-Feet On Wall Knees Down Bear Walkout,FALSE,10,,,10,,,10,,
-SUPERSET_START,Main 2,30,,,,,,,,
-Hamstring Curls on Yoga Ball,FALSE,12,,,12,,,12,,
-Goblet Squat 5sec ISO at Bottom,FALSE,10,20,,10,20,,10,20,
-SUPERSET_START,Cooldown,30,,,,,,,,
-Jumping Jacks,FALSE,,,30,,,30,,,30
-Feet on Wall Half Sit up ISO,FALSE,,,30,,,30,,,30
+Exercise Name,filename,LeftRight?,Reps,Weight,Time,Reps,Weight,Time,Reps,Weight,Time
+SUPERSET_START ,,Warmup,30,,,,,,,,
+Single Leg Heels Dug in Bridge,1_2 Kneeling Single Arm Landmine Press-MXN7i0DAmCc.mkv,TRUE,8,,2,8,,2,8,,2
+Lateral Band Walks,1_2 Kneeling Single Arm Overhead Press vs. Wall-EdNWweKV9XE.mkv,TRUE,12,,2,12,,2,12,,2
+Globlet Squat Jump,Heels Dug In Bridge Iso-sB_cBt378Jc.mp4,FALSE,10,20,3,10,20,3,10,20,3
+SUPERSET_START,,Main,90,,,,,,,,
+DB Alternating Reverse lunge w/ rotation over knee,Heels Dug In Bridge Iso-sB_cBt378Jc.mp4,TRUE,8,40,,8,40,,8,40,
+Feet On Wall Knees Down Bear Walkout,Seated Overhead Dumbbell Press _ Dumbbell Z-Press-uVR_aDWEC8g.mkv,FALSE,10,,,10,,,10,,
+SUPERSET_START,Seated Overhead Dumbbell Press w_Adduction-Vnl1vKhABsM.mkv,Main 2,30,,,,,,,,
+Hamstring Curls on Yoga Ball,Standing Overhead Barbell Press-3WVZYn4Sny8.mp4,FALSE,12,,,12,,,12,,
+Goblet Squat 5sec ISO at Bottom,Standing Overhead Barbell Press-3WVZYn4Sny8.mp4,FALSE,10,20,,10,20,,10,20,
+SUPERSET_START,,Cooldown,30,,,,,,,,
+Jumping Jacks,Standing Overhead Barbell Press-3WVZYn4Sny8.mp4,FALSE,,,30,,,30,,,30
+Feet on Wall Half Sit up ISO,Standing Overhead Barbell Press-3WVZYn4Sny8.mp4,FALSE,,,30,,,30,,,30

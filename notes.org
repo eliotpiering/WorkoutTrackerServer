@@ -1,0 +1,5 @@
+#+TITLE: Notes
+
+* Add a index route for workouts
+* Add a show route for workouts
+* Update react to show it

@@ -18,15 +18,20 @@ def process_from_csv(filename)
 
     CSV.read(filename, headers: true).each do |row|
       if row[0].match(/SUPERSET_START/)
-        superset = Superset.create!(workout: workout, name: row[1], position: superset_position, rest_time: row[2])
+        superset = Superset.create!(workout: workout, name: row[2], position: superset_position, rest_time: row[3])
         superset_position += 1
         next
       end
 
       exercise = Exercise.find_or_create_by!(name: row[0])
+      if !exercise.video.attached?
+        set_video(exercise, row[1])
+        exercise.save!
+      end
+
       lift = Lift.create!(exercise: exercise, superset: superset, position: lift_position)
       lift_attempt_position = 0
-      row[2..].each_slice(3) do |target_reps, target_weight, target_time|
+      row[3..].each_slice(3) do |target_reps, target_weight, target_time|
         LiftAttempt.create!(lift: lift, target_reps: target_reps, target_weight: target_weight, target_time: target_time, position: lift_attempt_position)
         lift_attempt_position += 1
       end
@@ -35,6 +40,12 @@ def process_from_csv(filename)
     end
     workout.save!
   end
+end
+
+def set_video(exercise, filename)
+  path = Rails.root.join(File.join(["test_videos", "Verticle_Pressing", filename]))
+  raise "BAD PATH #{path}" unless path.exist?
+  exercise.video.attach(io: File.open(path), filename: exercise.name.gsub(" ", "-"))
 end
 
 process_from_csv(
