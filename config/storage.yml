@@ -5,3 +5,12 @@ local:
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
+
+digital_ocean_public:
+  service: S3
+  access_key_id: <%= Rails.application.credentials.DO_ACCESS_KEY %>
+  secret_access_key: <%= Rails.application.credentials.DO_SECRET %>
+  public: true
+  region: nyc3
+  bucket: ep-files
+  endpoint: <%= Rails.application.credentials.DO_ENDPOINT %>
