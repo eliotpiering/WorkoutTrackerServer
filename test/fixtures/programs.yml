@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weeks: 1
+  workouts_per_week: 1
+  name: MyString
+
+two:
+  weeks: 1
+  workouts_per_week: 1
+  name: MyString

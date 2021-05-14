@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_16_033247) do
+ActiveRecord::Schema.define(version: 2021_05_14_021501) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -72,6 +72,44 @@ ActiveRecord::Schema.define(version: 2021_04_16_033247) do
     t.index ["superset_id"], name: "index_lifts_on_superset_id"
   end
 
+  create_table "program_days", force: :cascade do |t|
+    t.integer "program_id", null: false
+    t.string "name"
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["program_id"], name: "index_program_days_on_program_id"
+  end
+
+  create_table "program_lifts", force: :cascade do |t|
+    t.integer "program_superset_id", null: false
+    t.integer "exercise_id"
+    t.integer "position"
+    t.json "weekly_lifts"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_id"], name: "index_program_lifts_on_exercise_id"
+    t.index ["program_superset_id"], name: "index_program_lifts_on_program_superset_id"
+  end
+
+  create_table "program_supersets", force: :cascade do |t|
+    t.integer "program_day_id", null: false
+    t.string "name"
+    t.integer "rest_period"
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["program_day_id"], name: "index_program_supersets_on_program_day_id"
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.integer "weeks"
+    t.integer "workouts_per_week"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "supersets", force: :cascade do |t|
     t.string "name"
     t.integer "workout_id", null: false
@@ -95,5 +133,9 @@ ActiveRecord::Schema.define(version: 2021_04_16_033247) do
   add_foreign_key "lift_attempts", "lifts"
   add_foreign_key "lifts", "exercises"
   add_foreign_key "lifts", "supersets"
+  add_foreign_key "program_days", "programs"
+  add_foreign_key "program_lifts", "exercises"
+  add_foreign_key "program_lifts", "program_supersets"
+  add_foreign_key "program_supersets", "program_days"
   add_foreign_key "supersets", "workouts"
 end
